@@ -37,6 +37,32 @@ jobs:
         env:
           NEXT_PUBLIC_BASE_PATH: /${{ github.event.repository.name }}
 
+      # PDF de los apuntes: Chromium headless abre cada /apunte/<id>/ del export
+      # y lo imprime a out/apuntes/<id>.pdf. Sólo hace falta el headless shell
+      # (no el Chromium completo); se cachea por versión de Playwright.
+      - name: Versión de Playwright
+        id: pw
+        run: echo "version=$(node -p "require('playwright/package.json').version")" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/cache@v4
+        id: pw-cache
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ steps.pw.outputs.version }}-shell
+
+      - name: Instalar Chromium
+        if: steps.pw-cache.outputs.cache-hit != 'true'
+        run: npx playwright install --with-deps --only-shell chromium
+
+      - name: Dependencias del sistema para Chromium
+        if: steps.pw-cache.outputs.cache-hit == 'true'
+        run: npx playwright install-deps chromium
+
+      - name: PDF de los apuntes
+        run: npm run pdf
+        env:
+          NEXT_PUBLIC_BASE_PATH: /${{ github.event.repository.name }}
+
       # .nojekyll: sin esto Pages ignora los archivos que empiezan con guion
       # bajo, y Next emite justamente _next/.
       - run: touch out/.nojekyll

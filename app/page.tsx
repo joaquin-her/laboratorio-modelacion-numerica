@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { UNIDADES } from '@/data/units';
 import { idsConApunte } from '@/lib/apuntes';
+import DescargarPdf from '@/components/DescargarPdf';
 
 const REPO_URL = 'https://github.com/joaquin-her/laboratorio-modelacion-numerica';
 
@@ -89,9 +90,14 @@ export default function Landing() {
                     </span>
                   </Link>
                   {conApunte.has(u.id) && (
-                    <Link className="unidad-apunte" href={`/apunte/${u.id}/`}>
-                      § Apunte teórico
-                    </Link>
+                    <span className="unidad-apunte-row">
+                      <Link className="unidad-apunte" href={`/apunte/${u.id}/`}>
+                        § Apunte teórico
+                      </Link>
+                      <DescargarPdf id={u.id} className="unidad-apunte" respaldo="apunte">
+                        ⤓ PDF
+                      </DescargarPdf>
+                    </span>
                   )}
                 </li>
               );
