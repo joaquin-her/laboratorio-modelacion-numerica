@@ -62,6 +62,8 @@ $$m_{k+1} = \frac{a_k + b_k}{2}$$
 
 Columnas de la tabla de la cátedra: $k$, $a_k$, $b_k$, $m_{k+1}$, $f(a_k)$, $f(b_k)$, $f(m_{k+1})$, $\Delta m_{k+1}$, $\Delta m/m$.
 
+::grafico[biseccion]{Bisección desde $[1{,}6;\ 2{,}6]$. Cada renglón es una iteración: el intervalo se parte al medio y se queda con la mitad donde $F$ cambia de signo. La raíz $\alpha$ (línea punteada) nunca sale del intervalo, y el ancho $\Delta m$ se reduce a la mitad por paso.}
+
 ### Cota del error (se conoce de antemano)
 
 $$|m_{k+1} - \alpha| \le \Delta m_{k+1} = \frac{b_k - a_k}{2} = \frac{b_0 - a_0}{2^{k+1}}$$
@@ -82,6 +84,8 @@ $$\frac{b_0 - a_0}{2^{k+1}} < \varepsilon \quad\Longrightarrow\quad k + 1 > \fra
 - Para ganar un decimal hacen falta $\log_2 10 \approx 3{,}3$ iteraciones.
 - El error verdadero $|m_k - \alpha|$ **no decrece de forma monótona**: a veces el punto medio cae casualmente muy cerca de la raíz y después se vuelve a alejar (Problema 2d). Lo que decrece de forma monótona es la **cota**.
 - Ventajas: siempre converge y sólo pide que $f$ sea continua. Desventaja: es lento (en la clase necesitó 17 iteraciones para 5 decimales).
+
+::grafico[biseccion-cota]{Escala logarítmica. La cota $\Delta m_{k+1} = (b_0-a_0)/2^{k+1}$ es una recta: por eso se puede despejar $k$. Cruza $\varepsilon = 0{,}02$ en $k=5$ y $0{,}5\cdot10^{-5}$ en $k=17$, como en la clase. El error verdadero (círculos huecos) queda siempre debajo, pero sube y baja.}
 
 ---
 
@@ -144,6 +148,10 @@ Por Taylor alrededor de $\alpha$: $\;x_{k+1} - \alpha = g'(\xi)(x_k - \alpha)$.
 
 > Verificación con la clase: $g'(x) = 1 - \left(\tfrac{x}{2} - \cos x\right)$ da $g'(1{,}93375) \approx -0{,}322$. Coincide con el $\lambda \approx 0{,}32$ de la tabla, y el signo negativo explica la oscilación.
 
+::grafico[punto-fijo]{Telaraña de $g(x) = x - (\tfrac{x^2}{4} - \operatorname{sen}x)$ desde $x_0 = 1{,}6$: desde cada $x_k$ se sube hasta la curva $g$ y se pasa en horizontal a la recta $y=x$, que da $x_{k+1}$. Como $g'(\alpha)\approx-0{,}32$, los iterados caen alternadamente a cada lado de $\alpha$ y la espiral se cierra.}
+
+::grafico[punto-fijo-divergente]{Misma ecuación con $\phi = 2$, o sea $g(x) = x - 2(\tfrac{x^2}{4} - \operatorname{sen}x)$: ahora $|g'(\alpha)|\approx1{,}64 > 1$ y la espiral se abre aunque $x_0 = 1{,}9$ arranca pegado a la raíz. No toda $g$ sirve.}
+
 **Para el Problema 3c** no hace falta iterar hasta el final: alcanza con calcular $\lambda = |g'(\alpha)|$ en la raíz hallada. Además, el valor experimental tiene que coincidir con ese.
 
 ---
@@ -157,6 +165,8 @@ Se aproxima $f$ por su recta tangente en $x_k$ y se busca dónde corta el eje:
 $$0 = f(x_k) + f'(x_k)(x_{k+1} - x_k) \quad\Longrightarrow\quad \boxed{x_{k+1} = x_k - \frac{f(x_k)}{f'(x_k)}}$$
 
 Es un caso particular de punto fijo, con $g(x) = x - \dfrac{f(x)}{f'(x)}$, o sea $\phi = 1/f'$.
+
+::grafico[newton]{Newton desde $x_0 = 1{,}6$ (tabla de la clase): cada tangente corta el eje en el iterado siguiente, $2{,}03364 \to 1{,}93856 \to 1{,}93377$. Cerca de la raíz la curva se parece tanto a su tangente que en el tercer paso ya no se distinguen.}
 
 ### Por qué converge cuadráticamente
 
@@ -183,12 +193,16 @@ $$\lambda = \left|\frac{f''(\alpha)}{2 f'(\alpha)}\right|$$
 
   entonces Newton converge de forma **monótona** a la única raíz en $[a,b]$.
 
+::grafico[fourier]{Problema 4 con $f(x) = x - \cos x$: $f'' = \cos x \ge 0$ en $[0, \pi/2]$, así que la condición $f\,f''>0$ vale donde $f>0$ (zona verde). Desde $x_0 = \pi/2$ los iterados bajan hacia $\alpha$ sin cruzarla. Desde $x_0 = 0$ (zona roja) el primer paso salta al otro lado, a $x_1 = 1$.}
+
 ### Cuándo falla o empeora
 
 - Si $f'(x_k) \approx 0$ (tangente casi horizontal), el siguiente iterado sale disparado lejos.
 - Si $x_0$ está lejos de la raíz, puede oscilar, divergir o converger a otra raíz.
 - En una **raíz múltiple** ($f(\alpha) = f'(\alpha) = 0$) el orden cae a $p = 1$.
 - Su **costo**: hay que evaluar $f'$ en cada paso. Esa es la motivación de la secante.
+
+::grafico[newton-falla]{La misma $F$ con $x_0 = 1{,}2$, cerca del mínimo de $F$ ($F' = 0$ en $x\approx1{,}03$): la tangente es casi horizontal y $x_1 \approx 3{,}6$ sale disparado lejos de $\alpha$. Acá vuelve, pero con otra $f$ podría divergir o ir a otra raíz (como $x = 0$).}
 
 ### Newton para calcular funciones (Problema 5)
 
@@ -223,6 +237,8 @@ $$f'(x_k) \approx \frac{f(x_k) - f(x_{k-1})}{x_k - x_{k-1}}
 \quad\Longrightarrow\quad
 x_{k+1} = x_k - f(x_k)\,\frac{x_k - x_{k-1}}{f(x_k) - f(x_{k-1})}$$
 
+::grafico[secante]{Secante desde $x_{-1} = 1{,}6$ y $x_0 = 2{,}6$ (tabla de la clase). Cada recta pasa por los dos últimos iterados. La tercera (punteada) sale de dos puntos del mismo lado de la raíz y la extrapola: a diferencia de Regula-Falsi, no hace falta encerrarla.}
+
 - Necesita **2 puntos de arranque**, que **no** tienen por qué encerrar la raíz (a diferencia de Regula-Falsi).
 - Hace **una sola evaluación nueva de $f$ por paso** y ninguna de $f'$.
 - Es un método **supralineal**:
@@ -255,7 +271,7 @@ $$\boxed{p \approx \frac{\ln\!\left(\Delta x_{k+1}/\Delta x_k\right)}{\ln\!\left
 - El método tiene que estar **convergiendo**. Las primeras filas no son representativas.
 - Las últimas filas tampoco sirven: cuando $\Delta x$ llega al nivel del redondeo, los cocientes se vuelven ruido.
 - Al calcular $\lambda$ conviene usar el $p$ **teórico redondeado** (1, 1,618 o 2), así se ve si $\lambda$ se estabiliza.
-- **Interpretación gráfica:** en un gráfico de $\log(\Delta x)$ contra $k$, un método lineal da una **recta** de pendiente $\log\lambda$. Un método de orden $p>1$ da una curva que cae cada vez más rápido.
+- **Interpretación gráfica:** en un gráfico de $\log(\Delta x)$ contra $k$, un método lineal da una **recta** de pendiente $\log\lambda$. Un método de orden $p>1$ da una curva que cae cada vez más rápido. El gráfico del §8 lo muestra con los cinco métodos.
 
 ---
 
@@ -272,6 +288,8 @@ Datos de la clase, para $f(x) = \tfrac{x^2}{4} - \operatorname{sen}x$ con $\alph
 | Newton-Raphson | $x_k - f_k/f'_k$ | $x_0$ | No (local) | 2 | $\lvert f''/2f'\rvert\approx0{,}54$ | 5 |
 
 En esta tabla, de arriba hacia abajo aumentan la información que usa cada método y su velocidad. De abajo hacia arriba aumenta la robustez.
+
+::grafico[convergencia]{$\log_{10}\Delta$ contra la iteración $k$, cortando en $\Delta < 0{,}5\cdot10^{-5}$. Los tres métodos lineales son rectas: la pendiente es $\log_{10}\lambda$, así que la bisección ($\lambda = 0{,}5$) es la más plana. Secante y Newton se curvan hacia abajo: su $\Delta$ cae cada vez más rápido.}
 
 ---
 
