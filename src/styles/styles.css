@@ -488,3 +488,80 @@ a.btn-ghost { text-decoration: none; display: inline-block; }
 @media (max-width: 640px) {
   .apunte-fig { padding: 8px 4px; margin-inline: -8px; }
 }
+
+.unidad-apunte-row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 10px; }
+
+/* ============================================================================
+   Impresión / PDF de los apuntes
+   ----------------------------------------------------------------------------
+   La usa Ctrl+P desde el navegador y también scripts/apuntes-pdf.mjs, que
+   genera out/apuntes/<id>.pdf en build. Siempre papel blanco y tinta oscura,
+   aunque el sitio esté en tema oscuro; sin barra, botones ni cuadriculado.
+   ========================================================================== */
+
+@page { size: A4; margin: 16mm 14mm 18mm; }
+
+@media print {
+  /* Tokens del tema claro. La especificidad (0,2,1) le gana a las dos reglas
+     del tema oscuro (:root:not([data-theme="light"]) y :root[data-theme="dark"]). */
+  html:root:not([data-theme="light"]),
+  html:root {
+    --bg:          #ffffff;
+    --grid-line:   transparent;
+    --surface:     #ffffff;
+    --surface-2:   #f2f5f8;
+    --border:      #c9d3dc;
+    --text:        #111a23;
+    --text-muted:  #4a5a69;
+    --accent:      #1f5fa8;
+    --accent-ink:  #ffffff;
+    --accent-soft: rgba(31, 95, 168, 0.08);
+    --accent-2:    #b45a24;
+    --shadow:      none;
+    color-scheme: light;
+  }
+
+  body {
+    background: #fff; color: var(--text);
+    padding: 0; font-size: 11pt; line-height: 1.5;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+
+  .topbar, .footer-note, button, .btn-ghost { display: none !important; }
+  .wrap { max-width: none; margin: 0; }
+
+  .apunte {
+    max-width: none; margin: 0; padding: 0;
+    background: none; border: 0; border-radius: 0; box-shadow: none;
+  }
+  .apunte h1 { font-size: 20pt; }
+  .apunte h2 { font-size: 14pt; margin-top: 22pt; }
+  .apunte h3 { font-size: 12pt; }
+  .apunte h1, .apunte h2, .apunte h3, .apunte h4 { break-after: avoid; page-break-after: avoid; }
+  .apunte p, .apunte li { orphans: 3; widows: 3; }
+
+  .apunte a { color: inherit; text-decoration: none; }
+
+  /* Bloques que no conviene partir entre páginas. */
+  .apunte blockquote, .apunte .scrollx, .apunte table, .apunte tr,
+  .apunte-math, .apunte .katex-display,
+  .apunte figure, .apunte .apunte-fig {
+    break-inside: avoid; page-break-inside: avoid;
+  }
+  .apunte thead { display: table-header-group; }
+
+  /* En papel no hay scroll: tablas y fórmulas se ajustan al ancho. */
+  .apunte .scrollx, .apunte-math, .apunte .katex-display { overflow: visible; }
+  .apunte table { width: 100%; font-size: 9.5pt; }
+  .apunte th, .apunte td { padding: 4px 7px; }
+  .apunte td .katex { white-space: nowrap; } /* una fórmula no se parte en dos renglones */
+  .apunte code { font-size: 0.85em; }
+  /* El MathML oculto de KaTeX duplicaría cada fórmula al copiar texto del PDF. */
+  .katex .katex-mathml { display: none; }
+
+  /* Figuras SVG inline: tinta oscura heredada y nunca más anchas que la hoja. */
+  .apunte figure, .apunte .apunte-fig { margin: 12pt 0; color: var(--text); }
+  /* Sólo SVG de figuras: KaTeX también usa <svg> (raíces, flechas) con alto fijo. */
+  .apunte figure svg, .apunte .apunte-fig svg { max-width: 100%; height: auto; color: var(--text); }
+  .apunte figcaption { color: var(--text-muted); }
+}

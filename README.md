@@ -178,6 +178,19 @@ bloque, que pueden ocupar varias líneas. Las fórmulas se renderizan en el
 server, así que el HTML publicado ya las trae resueltas. Hoy hay apuntes para las
 Guías 2, 3 y 4.
 
+Cada apunte también se descarga en PDF («⤓ Descargar PDF» en su barra, «⤓ PDF» en
+la tarjeta). El PDF lo genera `scripts/apuntes-pdf.mjs` después del build: sirve
+`out/`, abre cada `/apunte/<id>/` con Chromium headless (Playwright) y guarda
+`out/apuntes/<id>.pdf`, usando la misma hoja `@media print` que Ctrl+P.
+
+```bash
+npx playwright install chromium   # una vez
+npm run build && npm run pdf      # con el mismo NEXT_PUBLIC_BASE_PATH en los dos
+```
+
+En `npm run dev` el PDF no existe: el botón lo detecta y abre el diálogo de
+impresión del navegador (desde la tarjeta, abre el apunte).
+
 ## Agregar una unidad nueva
 
 Son tres pasos, y el motor no se toca:
