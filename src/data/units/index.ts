@@ -12,11 +12,13 @@ import type { Unidad } from '@/types/quiz';
 import { unidad as metodosNumericosGuia1 } from './metodos-numericos-guia-1';
 import { unidad as modelacionGuia2Enl } from './modelacion-guia-2-enl';
 import { unidad as modelacionGuia3Sel } from './modelacion-guia-3-sel';
+import { unidad as modelacionGuia4Senl } from './modelacion-guia-4-senl';
 
 export const UNIDADES: Unidad[] = [
   metodosNumericosGuia1,
   modelacionGuia2Enl,
   modelacionGuia3Sel,
+  modelacionGuia4Senl,
 ];
 
 export function unidadPorId(id: string): Unidad | undefined {

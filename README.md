@@ -5,7 +5,8 @@ se responde por opción múltiple o ingresando el valor calculado, y se corrige 
 instante como correcto o incorrecto, con el desarrollo completo desplegable.
 
 Las unidades incluidas son la **Guía 1 — Errores**, la **Guía 2 — Ecuaciones No
-Lineales** y la **Guía 3 — Sistemas de Ecuaciones Lineales** de 95.13 Métodos
+Lineales**, la **Guía 3 — Sistemas de Ecuaciones Lineales** y la **Guía 4 —
+Sistemas de Ecuaciones No Lineales** de 95.13 Métodos
 Matemáticos y Numéricos (Facultad de Ingeniería, UBA). El motor está separado
 del contenido: agregar la guía de otra materia es escribir un archivo y
 registrarlo.
@@ -116,6 +117,27 @@ siempre en doble precisión, condicionamiento experimental
 `K(A) ≈ (‖δx‖/‖x̃‖)·10^t` con `p = log₁₀K` y `q = t − p`, y convergencia
 decidida por el radio espectral de la **matriz de iteración** `T`, no por el
 de `A`.
+
+### Guía 4 — Sistemas de Ecuaciones No Lineales
+
+Los 5 problemas de la Guía 4 (33 ejercicios en total). No hay resoluciones de la
+cátedra para esta guía: todo se verificó con un script de Python que simula la
+aritmética de `t` dígitos con redondeo simétrico en cada operación.
+
+| Problema | Tema |
+|---|---|
+| 1 | Newton-Raphson 2×2: jacobiano, cuenca de convergencia y orden cuadrático |
+| 2 | Newton con 4 dígitos: criterio de corte por componente y reformulación del sistema |
+| 3 | Newton con aritmética de 3 dígitos: estancamiento por redondeo |
+| 4 | Newton vs. Gauss-Seidel no lineal: elección del despeje y ciclo por redondeo |
+| 5 | Newton 3×3 con jacobiano actualizado y fijo: el «orden ≈ 0,5» y `λ = ρ(I − J₀⁻¹J*)` |
+
+Newton para sistemas resuelve en cada paso el SEL `J(Xₖ)·ΔX = −F(Xₖ)`; las
+tablas usan `‖ΔX‖∞`, error relativo y la estimación de `p` y `λ` con tres
+diferencias consecutivas, como en la Guía 2. En el Problema 5 el enunciado
+literal (`x₁x₂x₃ = +4,188`) no tiene solución real cerca del arranque; se
+trabaja con `−4,188`, que reproduce el orden ≈ 0,5 que pide la guía, y la
+unidad lo explica.
 
 ## Estructura
 
