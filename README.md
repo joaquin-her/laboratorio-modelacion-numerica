@@ -1,4 +1,4 @@
-# mode_quizz — Laboratorio de Errores
+# laboratorio-modelacion-numerica — Laboratorio de Errores
 
 Práctica autoevaluable multi-unidad para materias de ingeniería. Cada ejercicio
 se responde por opción múltiple o ingresando el valor calculado, y se corrige al
