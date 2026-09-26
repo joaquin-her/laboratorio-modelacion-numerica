@@ -474,3 +474,17 @@ a.btn-ghost { text-decoration: none; display: inline-block; }
   .apunte h1 { font-size: 1.5rem; }
   .apunte th, .apunte td { padding: 6px 8px; }
 }
+
+/* Gráficos del apunte: SVG inline (content/apuntes/graficos/*.svg) con los
+   colores en variables del tema, así se ven en claro, en oscuro e impresos. */
+.apunte-fig {
+  margin: 20px auto 22px; max-width: 600px;
+  padding: 12px 12px 10px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--surface);
+  break-inside: avoid; page-break-inside: avoid;
+}
+.apunte-fig svg { display: block; width: 100%; height: auto; color: var(--text); }
+.apunte-fig figcaption { margin-top: 8px; font-size: 0.9rem; line-height: 1.5; color: var(--text-muted); }
+@media (max-width: 640px) {
+  .apunte-fig { padding: 8px 4px; margin-inline: -8px; }
+}

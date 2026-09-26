@@ -1,0 +1,95 @@
+<svg class="apunte-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" role="img" aria-label="Bisección: cota del error (b₀ − a₀)/2^(k+1) y error verdadero |m_(k+1) − α| en escala logarítmica" style="font-family:var(--font-sans,system-ui,sans-serif)">
+  <title>Bisección: cota del error (b₀ − a₀)/2^(k+1) y error verdadero |m_(k+1) − α| en escala logarítmica</title>
+  <desc>La cota baja en línea recta, a la mitad por paso; cruza ε = 0,02 en k = 5 y 0,5·10⁻⁵ en k = 17. El error verdadero queda siempre por debajo de la cota pero sube y baja.</desc>
+  <defs><clipPath id="marco-biseccion-cota"><rect x="48" y="16" width="416" height="264"/></clipPath></defs>
+  <line x1="48.0" y1="280.0" x2="48.0" y2="16.0" style="stroke:var(--border,#d7dfe6);stroke-width:1"/>
+  <text x="48.0" y="298.0" text-anchor="middle" style="fill:var(--text-muted,#5a6b7a);font-size:14px">0</text>
+  <line x1="91.8" y1="280.0" x2="91.8" y2="16.0" style="stroke:var(--border,#d7dfe6);stroke-width:1"/>
+  <text x="91.8" y="298.0" text-anchor="middle" style="fill:var(--text-muted,#5a6b7a);font-size:14px">2</text>
+  <line x1="135.6" y1="280.0" x2="135.6" y2="16.0" style="stroke:var(--border,#d7dfe6);stroke-width:1"/>
+  <text x="135.6" y="298.0" text-anchor="middle" style="fill:var(--text-muted,#5a6b7a);font-size:14px">4</text>
+  <line x1="179.4" y1="280.0" x2="179.4" y2="16.0" style="stroke:var(--border,#d7dfe6);stroke-width:1"/>
+  <text x="179.4" y="298.0" text-anchor="middle" style="fill:var(--text-muted,#5a6b7a);font-size:14px">6</text>
+  <line x1="223.2" y1="280.0" x2="223.2" y2="16.0" style="stroke:var(--border,#d7dfe6);stroke-width:1"/>
+  <text x="223.2" y="298.0" text-anchor="middle" style="fill:var(--text-muted,#5a6b7a);font-size:14px">8</text>
+  <line x1="266.9" y1="280.0" x2="266.9" y2="16.0" style="stroke:var(--border,#d7dfe6);stroke-width:1"/>
+  <text x="266.9" y="298.0" text-anchor="middle" style="fill:var(--text-muted,#5a6b7a);font-size:14px">10</text>
+  <line x1="310.7" y1="280.0" x2="310.7" y2="16.0" style="stroke:var(--border,#d7dfe6);stroke-width:1"/>
+  <text x="310.7" y="298.0" text-anchor="middle" style="fill:var(--text-muted,#5a6b7a);font-size:14px">12</text>
+  <line x1="354.5" y1="280.0" x2="354.5" y2="16.0" style="stroke:var(--border,#d7dfe6);stroke-width:1"/>
+  <text x="354.5" y="298.0" text-anchor="middle" style="fill:var(--text-muted,#5a6b7a);font-size:14px">14</text>
+  <line x1="398.3" y1="280.0" x2="398.3" y2="16.0" style="stroke:var(--border,#d7dfe6);stroke-width:1"/>
+  <text x="398.3" y="298.0" text-anchor="middle" style="fill:var(--text-muted,#5a6b7a);font-size:14px">16</text>
+  <line x1="442.1" y1="280.0" x2="442.1" y2="16.0" style="stroke:var(--border,#d7dfe6);stroke-width:1"/>
+  <text x="442.1" y="298.0" text-anchor="middle" style="fill:var(--text-muted,#5a6b7a);font-size:14px">18</text>
+  <line x1="48.0" y1="280.0" x2="464.0" y2="280.0" style="stroke:var(--border,#d7dfe6);stroke-width:1"/>
+  <text x="42.0" y="280.0" text-anchor="end" dominant-baseline="middle" style="fill:var(--text-muted,#5a6b7a);font-size:14px">10⁻⁷</text>
+  <line x1="48.0" y1="242.3" x2="464.0" y2="242.3" style="stroke:var(--border,#d7dfe6);stroke-width:1"/>
+  <text x="42.0" y="242.3" text-anchor="end" dominant-baseline="middle" style="fill:var(--text-muted,#5a6b7a);font-size:14px">10⁻⁶</text>
+  <line x1="48.0" y1="204.6" x2="464.0" y2="204.6" style="stroke:var(--border,#d7dfe6);stroke-width:1"/>
+  <text x="42.0" y="204.6" text-anchor="end" dominant-baseline="middle" style="fill:var(--text-muted,#5a6b7a);font-size:14px">10⁻⁵</text>
+  <line x1="48.0" y1="166.9" x2="464.0" y2="166.9" style="stroke:var(--border,#d7dfe6);stroke-width:1"/>
+  <text x="42.0" y="166.9" text-anchor="end" dominant-baseline="middle" style="fill:var(--text-muted,#5a6b7a);font-size:14px">10⁻⁴</text>
+  <line x1="48.0" y1="129.1" x2="464.0" y2="129.1" style="stroke:var(--border,#d7dfe6);stroke-width:1"/>
+  <text x="42.0" y="129.1" text-anchor="end" dominant-baseline="middle" style="fill:var(--text-muted,#5a6b7a);font-size:14px">10⁻³</text>
+  <line x1="48.0" y1="91.4" x2="464.0" y2="91.4" style="stroke:var(--border,#d7dfe6);stroke-width:1"/>
+  <text x="42.0" y="91.4" text-anchor="end" dominant-baseline="middle" style="fill:var(--text-muted,#5a6b7a);font-size:14px">10⁻²</text>
+  <line x1="48.0" y1="53.7" x2="464.0" y2="53.7" style="stroke:var(--border,#d7dfe6);stroke-width:1"/>
+  <text x="42.0" y="53.7" text-anchor="end" dominant-baseline="middle" style="fill:var(--text-muted,#5a6b7a);font-size:14px">10⁻¹</text>
+  <line x1="48.0" y1="16.0" x2="464.0" y2="16.0" style="stroke:var(--border,#d7dfe6);stroke-width:1"/>
+  <text x="42.0" y="16.0" text-anchor="end" dominant-baseline="middle" style="fill:var(--text-muted,#5a6b7a);font-size:14px">10⁰</text>
+  <rect x="48.0" y="16.0" width="416.0" height="264.0" style="fill:none;stroke:var(--text-muted,#5a6b7a);stroke-width:1"/>
+  <text x="464.0" y="316.0" text-anchor="end" style="fill:var(--text-muted,#5a6b7a);font-size:14px;font-style:italic">k</text>
+  <line x1="48.0" y1="80.1" x2="464.0" y2="80.1" style="stroke:var(--text-muted,#5a6b7a);stroke-width:1.2;stroke-dasharray:6 4"/>
+  <line x1="48.0" y1="215.9" x2="464.0" y2="215.9" style="stroke:var(--text-muted,#5a6b7a);stroke-width:1.2;stroke-dasharray:6 4"/>
+  <text x="459.6" y="95.9" text-anchor="end" style="fill:var(--text-muted,#5a6b7a);font-size:12px;paint-order:stroke;stroke:var(--surface,#ffffff);stroke-width:4px;stroke-linejoin:round">ε = 0,02</text>
+  <text x="54.6" y="231.8" text-anchor="start" style="fill:var(--text-muted,#5a6b7a);font-size:12px;paint-order:stroke;stroke:var(--surface,#ffffff);stroke-width:4px;stroke-linejoin:round">ε = 0,5·10⁻⁵</text>
+  <polyline points="48.0,45.4 69.9,56.6 91.8,68.2 113.7,79.1 135.6,91.4 157.5,100.8 179.4,116.4 201.3,120.2 223.2,153.2 245.1,133.9 266.9,151.4 288.8,199.6 310.7,165.5 332.6,179.0 354.5,195.9 376.4,233.3 398.3,213.2 420.2,230.3 442.1,270.6 464.0,246.4" style="fill:none;stroke:var(--accent-2,#b45a24);stroke-width:1.4;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:3 3"/>
+  <circle cx="48.0" cy="45.4" r="3.2" style="fill:var(--surface,#ffffff);stroke:var(--accent-2,#b45a24);stroke-width:1.8"/>
+  <circle cx="69.9" cy="56.6" r="3.2" style="fill:var(--surface,#ffffff);stroke:var(--accent-2,#b45a24);stroke-width:1.8"/>
+  <circle cx="91.8" cy="68.2" r="3.2" style="fill:var(--surface,#ffffff);stroke:var(--accent-2,#b45a24);stroke-width:1.8"/>
+  <circle cx="113.7" cy="79.1" r="3.2" style="fill:var(--surface,#ffffff);stroke:var(--accent-2,#b45a24);stroke-width:1.8"/>
+  <circle cx="135.6" cy="91.4" r="3.2" style="fill:var(--surface,#ffffff);stroke:var(--accent-2,#b45a24);stroke-width:1.8"/>
+  <circle cx="157.5" cy="100.8" r="3.2" style="fill:var(--surface,#ffffff);stroke:var(--accent-2,#b45a24);stroke-width:1.8"/>
+  <circle cx="179.4" cy="116.4" r="3.2" style="fill:var(--surface,#ffffff);stroke:var(--accent-2,#b45a24);stroke-width:1.8"/>
+  <circle cx="201.3" cy="120.2" r="3.2" style="fill:var(--surface,#ffffff);stroke:var(--accent-2,#b45a24);stroke-width:1.8"/>
+  <circle cx="223.2" cy="153.2" r="3.2" style="fill:var(--surface,#ffffff);stroke:var(--accent-2,#b45a24);stroke-width:1.8"/>
+  <circle cx="245.1" cy="133.9" r="3.2" style="fill:var(--surface,#ffffff);stroke:var(--accent-2,#b45a24);stroke-width:1.8"/>
+  <circle cx="266.9" cy="151.4" r="3.2" style="fill:var(--surface,#ffffff);stroke:var(--accent-2,#b45a24);stroke-width:1.8"/>
+  <circle cx="288.8" cy="199.6" r="3.2" style="fill:var(--surface,#ffffff);stroke:var(--accent-2,#b45a24);stroke-width:1.8"/>
+  <circle cx="310.7" cy="165.5" r="3.2" style="fill:var(--surface,#ffffff);stroke:var(--accent-2,#b45a24);stroke-width:1.8"/>
+  <circle cx="332.6" cy="179.0" r="3.2" style="fill:var(--surface,#ffffff);stroke:var(--accent-2,#b45a24);stroke-width:1.8"/>
+  <circle cx="354.5" cy="195.9" r="3.2" style="fill:var(--surface,#ffffff);stroke:var(--accent-2,#b45a24);stroke-width:1.8"/>
+  <circle cx="376.4" cy="233.3" r="3.2" style="fill:var(--surface,#ffffff);stroke:var(--accent-2,#b45a24);stroke-width:1.8"/>
+  <circle cx="398.3" cy="213.2" r="3.2" style="fill:var(--surface,#ffffff);stroke:var(--accent-2,#b45a24);stroke-width:1.8"/>
+  <circle cx="420.2" cy="230.3" r="3.2" style="fill:var(--surface,#ffffff);stroke:var(--accent-2,#b45a24);stroke-width:1.8"/>
+  <circle cx="442.1" cy="270.6" r="3.2" style="fill:var(--surface,#ffffff);stroke:var(--accent-2,#b45a24);stroke-width:1.8"/>
+  <circle cx="464.0" cy="246.4" r="3.2" style="fill:var(--surface,#ffffff);stroke:var(--accent-2,#b45a24);stroke-width:1.8"/>
+  <polyline points="48.0,27.4 69.9,38.7 91.8,50.1 113.7,61.4 135.6,72.8 157.5,84.1 179.4,95.5 201.3,106.8 223.2,118.2 245.1,129.5 266.9,140.9 288.8,152.2 310.7,163.6 332.6,174.9 354.5,186.3 376.4,197.7 398.3,209.0 420.2,220.4 442.1,231.7 464.0,243.1" style="fill:none;stroke:var(--accent,#1f5fa8);stroke-width:2.4;stroke-linejoin:round;stroke-linecap:round"/>
+  <circle cx="48.0" cy="27.4" r="3" style="fill:var(--accent,#1f5fa8);stroke:var(--accent,#1f5fa8);stroke-width:1.8"/>
+  <circle cx="69.9" cy="38.7" r="3" style="fill:var(--accent,#1f5fa8);stroke:var(--accent,#1f5fa8);stroke-width:1.8"/>
+  <circle cx="91.8" cy="50.1" r="3" style="fill:var(--accent,#1f5fa8);stroke:var(--accent,#1f5fa8);stroke-width:1.8"/>
+  <circle cx="113.7" cy="61.4" r="3" style="fill:var(--accent,#1f5fa8);stroke:var(--accent,#1f5fa8);stroke-width:1.8"/>
+  <circle cx="135.6" cy="72.8" r="3" style="fill:var(--accent,#1f5fa8);stroke:var(--accent,#1f5fa8);stroke-width:1.8"/>
+  <circle cx="157.5" cy="84.1" r="3" style="fill:var(--accent,#1f5fa8);stroke:var(--accent,#1f5fa8);stroke-width:1.8"/>
+  <circle cx="179.4" cy="95.5" r="3" style="fill:var(--accent,#1f5fa8);stroke:var(--accent,#1f5fa8);stroke-width:1.8"/>
+  <circle cx="201.3" cy="106.8" r="3" style="fill:var(--accent,#1f5fa8);stroke:var(--accent,#1f5fa8);stroke-width:1.8"/>
+  <circle cx="223.2" cy="118.2" r="3" style="fill:var(--accent,#1f5fa8);stroke:var(--accent,#1f5fa8);stroke-width:1.8"/>
+  <circle cx="245.1" cy="129.5" r="3" style="fill:var(--accent,#1f5fa8);stroke:var(--accent,#1f5fa8);stroke-width:1.8"/>
+  <circle cx="266.9" cy="140.9" r="3" style="fill:var(--accent,#1f5fa8);stroke:var(--accent,#1f5fa8);stroke-width:1.8"/>
+  <circle cx="288.8" cy="152.2" r="3" style="fill:var(--accent,#1f5fa8);stroke:var(--accent,#1f5fa8);stroke-width:1.8"/>
+  <circle cx="310.7" cy="163.6" r="3" style="fill:var(--accent,#1f5fa8);stroke:var(--accent,#1f5fa8);stroke-width:1.8"/>
+  <circle cx="332.6" cy="174.9" r="3" style="fill:var(--accent,#1f5fa8);stroke:var(--accent,#1f5fa8);stroke-width:1.8"/>
+  <circle cx="354.5" cy="186.3" r="3" style="fill:var(--accent,#1f5fa8);stroke:var(--accent,#1f5fa8);stroke-width:1.8"/>
+  <circle cx="376.4" cy="197.7" r="3" style="fill:var(--accent,#1f5fa8);stroke:var(--accent,#1f5fa8);stroke-width:1.8"/>
+  <circle cx="398.3" cy="209.0" r="3" style="fill:var(--accent,#1f5fa8);stroke:var(--accent,#1f5fa8);stroke-width:1.8"/>
+  <circle cx="420.2" cy="220.4" r="3" style="fill:var(--accent,#1f5fa8);stroke:var(--accent,#1f5fa8);stroke-width:1.8"/>
+  <circle cx="442.1" cy="231.7" r="3" style="fill:var(--accent,#1f5fa8);stroke:var(--accent,#1f5fa8);stroke-width:1.8"/>
+  <circle cx="464.0" cy="243.1" r="3" style="fill:var(--accent,#1f5fa8);stroke:var(--accent,#1f5fa8);stroke-width:1.8"/>
+  <line x1="157.5" y1="280.0" x2="157.5" y2="80.1" style="stroke:var(--accent,#1f5fa8);stroke-width:1.2;stroke-dasharray:2 3"/>
+  <text x="152.0" y="270.6" text-anchor="end" style="fill:var(--accent,#1f5fa8);font-size:12px;font-weight:600;paint-order:stroke;stroke:var(--surface,#ffffff);stroke-width:4px;stroke-linejoin:round">k = 5</text>
+  <line x1="420.2" y1="280.0" x2="420.2" y2="215.9" style="stroke:var(--accent,#1f5fa8);stroke-width:1.2;stroke-dasharray:2 3"/>
+  <text x="414.7" y="270.6" text-anchor="end" style="fill:var(--accent,#1f5fa8);font-size:12px;font-weight:600;paint-order:stroke;stroke:var(--surface,#ffffff);stroke-width:4px;stroke-linejoin:round">k = 17</text>
+  <text x="102.7" y="36.9" text-anchor="start" style="fill:var(--accent,#1f5fa8);font-size:14px;font-weight:600;paint-order:stroke;stroke:var(--surface,#ffffff);stroke-width:4px;stroke-linejoin:round">cota Δm</text>
+  <text x="280.1" y="231.0" text-anchor="middle" style="fill:var(--accent-2,#b45a24);font-size:13px;paint-order:stroke;stroke:var(--surface,#ffffff);stroke-width:4px;stroke-linejoin:round">error verdadero |m − α|</text>
+</svg>
