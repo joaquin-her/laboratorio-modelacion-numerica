@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import { unidadPorId } from '@/data/units';
 import { idsConApunte, leerApunte } from '@/lib/apuntes';
 import Tema from '@/components/Tema';
+import DescargarPdf from '@/components/DescargarPdf';
 
 // Export estático: una carpeta por apunte, generada en build.
 export function generateStaticParams() {
@@ -58,6 +59,7 @@ export default async function PaginaApunte({ params }: { params: Promise<{ id: s
                 ✎ Practicar
               </Link>
             )}
+            <DescargarPdf id={id} className="btn-ghost" />
             <Tema />
           </div>
         </div>
