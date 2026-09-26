@@ -17,7 +17,14 @@ import { UNIDADES } from '@/data/units';
 import Quiz from '@/components/Quiz';
 import Tema from '@/components/Tema';
 
-export default function UnidadVista({ unidad }: { unidad: Unidad }) {
+export default function UnidadVista({
+  unidad,
+  conApunte = false,
+}: {
+  unidad: Unidad;
+  /** Si hay apunte teórico, la barra superior ofrece el enlace. */
+  conApunte?: boolean;
+}) {
   const router = useRouter();
   const { progreso, registrar, reiniciar, listo } = useProgreso(unidad.id);
   const avance = avanceDe(unidad, progreso);
@@ -86,6 +93,11 @@ export default function UnidadVista({ unidad }: { unidad: Unidad }) {
             <div className="progress-track" role="presentation">
               <div className="progress-fill" style={{ width: `${pct}%` }} />
             </div>
+            {conApunte && (
+              <Link className="btn-ghost" href={`/apunte/${unidad.id}/`}>
+                § Apunte
+              </Link>
+            )}
             <Tema />
             <button type="button" className="btn-ghost" onClick={pedirReinicio}>
               ↺ Reiniciar

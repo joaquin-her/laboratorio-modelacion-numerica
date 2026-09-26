@@ -1,9 +1,12 @@
 import Link from 'next/link';
 import { UNIDADES } from '@/data/units';
+import { idsConApunte } from '@/lib/apuntes';
 
 const REPO_URL = 'https://github.com/joaquin-her/laboratorio-modelacion-numerica';
 
 export default function Landing() {
+  const conApunte = new Set(idsConApunte());
+
   return (
     <>
       <header className="topbar">
@@ -75,7 +78,7 @@ export default function Landing() {
             {UNIDADES.map((u) => {
               const ejercicios = u.problemas.reduce((n, p) => n + p.preguntas.length, 0);
               return (
-                <li key={u.id}>
+                <li key={u.id} className="unidad-item">
                   <Link className="unidad-card" href={`/unidad/${u.id}/`}>
                     <span className="unidad-codigo">
                       {u.codigo} {u.materia}
@@ -85,6 +88,11 @@ export default function Landing() {
                       {u.problemas.length} problemas · {ejercicios} ejercicios
                     </span>
                   </Link>
+                  {conApunte.has(u.id) && (
+                    <Link className="unidad-apunte" href={`/apunte/${u.id}/`}>
+                      § Apunte teórico
+                    </Link>
+                  )}
                 </li>
               );
             })}

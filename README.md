@@ -144,6 +144,9 @@ unidad lo explica.
 ```
 app/page.tsx                           Landing: portada y grilla de unidades
 app/unidad/[id]/                       Una página por unidad (export estático)
+app/apunte/[id]/                       Apunte teórico de una unidad, si existe
+content/apuntes/<id-de-unidad>.md      Apuntes en Markdown con fórmulas $…$ y $$…$$
+src/lib/apuntes.ts                     Lee y renderiza los apuntes en build (marked + KaTeX)
 src/components/                        Motor: render, corrección y puntaje      ← no hace falta tocarlo
 src/lib/progress.ts                    Persistencia del progreso en localStorage
 src/lib/useProgreso.ts                 Hook que expone el progreso de una unidad
@@ -162,6 +165,18 @@ nueva sólo tiene que satisfacer el tipo `Unidad`, y los errores de forma los
 atrapa el compilador en vez de aparecer en runtime. Los ids de cada pregunta se
 namespacean con el id de la unidad (`metodos-numericos-guia-1__q4a1`), así dos
 guías pueden numerar sus preguntas igual sin pisarse.
+
+## Apuntes teóricos
+
+Cada unidad puede tener un apunte con los métodos y fundamentos que hacen falta
+para resolverla. Alcanza con crear `content/apuntes/<id-de-unidad>.md`: la ruta
+`/apunte/<id>/` se genera sola en el build, y la tarjeta de la unidad y la barra
+de la vista de práctica muestran el enlace.
+
+El Markdown admite tablas (GFM) y fórmulas de KaTeX: `$…$` en línea y `$$…$$` en
+bloque, que pueden ocupar varias líneas. Las fórmulas se renderizan en el
+server, así que el HTML publicado ya las trae resueltas. Hoy hay apuntes para las
+Guías 2, 3 y 4.
 
 ## Agregar una unidad nueva
 

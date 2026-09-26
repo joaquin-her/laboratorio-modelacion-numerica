@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { UNIDADES, unidadPorId } from '@/data/units';
+import { tieneApunte } from '@/lib/apuntes';
 import UnidadVista from './UnidadVista';
 
 // Export estático: una carpeta por unidad, generada en build.
@@ -26,5 +27,5 @@ export default async function PaginaUnidad({ params }: { params: Promise<{ id: s
   const { id } = await params;
   const unidad = unidadPorId(id);
   if (!unidad) notFound();
-  return <UnidadVista unidad={unidad} />;
+  return <UnidadVista unidad={unidad} conApunte={tieneApunte(unidad.id)} />;
 }
