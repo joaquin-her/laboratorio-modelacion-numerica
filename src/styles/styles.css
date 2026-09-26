@@ -117,6 +117,16 @@ code { font-family: var(--font-mono); font-size: 0.9em; }
   text-transform: uppercase; color: var(--text-muted);
 }
 
+.brand-side { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.repo-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--font-mono); font-size: 0.82rem; letter-spacing: 0.02em;
+  color: var(--text-muted); text-decoration: none;
+  border: 1px solid var(--border); border-radius: 6px; padding: 5px 10px;
+}
+.repo-link:hover { color: var(--accent); border-color: var(--accent); }
+.repo-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
 .score-row { display: flex; align-items: center; gap: 10px; margin-top: 8px; flex-wrap: wrap; }
 .score-readout { font-family: var(--font-mono); font-size: 0.92rem; color: var(--text-muted); white-space: nowrap; }
 .score-readout b { color: var(--text); font-variant-numeric: tabular-nums; }
